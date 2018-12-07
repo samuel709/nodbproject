@@ -1,0 +1,9 @@
+.fighter {
+    /*FONT*/
+    font-family: sans-serif;
+    font-size: 14px;
+    /*POSITIONING*/
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
