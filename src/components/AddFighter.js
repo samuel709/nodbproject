@@ -4,12 +4,6 @@ import axios from 'axios';
 
 class AddFighter extends Component {
     
-
-handleChange(prop, value) {
-    this.setState({ [prop] : value });
- }
-
-
  constructor(props){
     super(props);
 
@@ -19,7 +13,15 @@ handleChange(prop, value) {
         image: "",
         fighters: []
     }
+
+    this.handleChange = this.handleChange.bind(this)
 }
+
+
+handleChange(prop, value) {
+    this.setState({ [prop] : value });
+ }
+
 render(){
 
     let newFighter = {
@@ -30,32 +32,18 @@ render(){
 
     return(
         <div>
-            {/* THIS IS GETTING THE TEXT FROM THE NAME BOX 
-            AND ASSIGINING IT TO THE NAME VARIABLE */}
-            <input type="text"
-                    placeholder="Name"
-                    onChange={(e) => {
-                        this.handleChange("name", e.target.value)
-                    }}/>
+            <Input placeholder="Name"
+                    field="name"
+                    handleChange={this.handleChange}/>
 
-            {/* THIS IS GETTING THE TEXT FROM THE FRANCHISE BOX
-            AND ASSIGINING IT TO THE FRANCHISE VARIABLE */}
-            <input type="text"
-                    placeholder="Franchise"
-                    onChange={(e) => {
-                        this.handleChange("franchise", e.target.value)
-                    }}/>
+            <Input placeholder="Franchise"
+                    field="franchise"
+                    handleChange={this.handleChange}/>
 
-            {/* THIS IS GETTING THE TEXT FROM THE IMAGE BOX AND 
-            ASSIGNING IT TO THE IMAGE VARIABLE */}
-            <input type="text"
-                    placeholder="Image URL"
-                    onChange={(e) => {
-                        this.handleChange("image", e.target.value)
-                    }}/>
-            
-            {/* THIS IS GETTING THE ADDFIGHTER FUNCTION FROM
-            APP.JS */}
+            <Input placeholder="Image"
+                    field="image"
+                    handleChange={this.handleChange}/>
+
             <button onClick={() => {
                 this.props.addFighter(newFighter)}}
                 >Add Fighter</button>

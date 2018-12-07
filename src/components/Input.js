@@ -1,3 +1,52 @@
+import React, {Component} from 'react'
+
+class Input extends Component {
+    constructor(props){
+        super(props);
+
+        this.state = {
+            prop: ""
+        }
+    }
+
+    render(){
+        return(
+            <div>
+                <input type="text"
+                        placeholder={this.props.placeholder}
+                        onChange={(e) => {this.props.handleChange(this.props.field, e.target.value)}}
+                        />
+            </div>
+        )
+    }
+}
+
+export default Input
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // import React, {Component} from 'react'
 
 // class Input extends Component {
