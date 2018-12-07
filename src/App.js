@@ -12,6 +12,7 @@ class App extends Component {
     }
 
     this.addFighter = this.addFighter.bind(this)
+    this.deleteFighter = this.deleteFighter.bind(this)
   }
 
   componentDidMount() {
@@ -32,6 +33,15 @@ class App extends Component {
     })
   }
 
+  deleteFighter(id){
+    axios.delete(`/api/fighters/${id}`)
+    .then((response) => {
+      this.setState({
+        fighters: response.data
+      })
+    })
+  }
+
   render() {
     const { fighters } = this.state;
     return (
@@ -45,6 +55,7 @@ class App extends Component {
         <div>
           <DisplayFighters 
           fighters={fighters}
+          deleteFighter={this.deleteFighter}
           />
         </div>
 

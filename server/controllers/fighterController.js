@@ -41,5 +41,13 @@ module.exports = {
         id++
         fighters.push(newFighter)
         res.status(200).send(fighters);
+    },
+    deleteFighter: (req, res) => {
+        const deleteID = req.params.id;
+        const fighterIndex = fighters.findIndex(fighter => fighter.id == deleteID)
+        
+        fighters.splice(fighterIndex, 1)
+
+        res.status(200).send(fighters)
     }
 }

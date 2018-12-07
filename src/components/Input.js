@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+// import React, {Component} from 'react'
 
 // class Input extends Component {
 
@@ -31,10 +31,10 @@ import React, {Component} from 'react'
 
 // export default Input
 
-export default function Input(props) {
-    return(
-        <div>
-            <input type="text" onChange={this.props.handleChange}/>
-        </div>
-    )
-}
+// export default function Input(props) {
+//     return(
+//         <div>
+//             <input type="text" onChange={this.props.handleChange}/>
+//         </div>
+//     )
+// }
