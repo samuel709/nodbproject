@@ -1,9 +1,48 @@
-.fighter {
+.fighters {
     /*FONT*/
-    font-family: sans-serif;
-    font-size: 14px;
+    text-align: center;
     /*POSITIONING*/
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
-    list-style-type: none;
+    /*MARGINS, BORDER, PADDING*/
+    border: 2px solid black;
+    padding: 20px;
+    margin: 20px 100px;
+    background-color: white;
+    opacity: 1;
+}
+
+.fighterImage {
+    /*SIZE*/
+    width: 175px;
+    height: 175px;
+    /*MARGINS, BORDER, PADDING*/
+    border: 1px solid black;
+    padding: 15px;
+}
+
+.deleteButton {
+    /*SIZE*/
+    width: 50px;
+    /*FONT*/
+    font-size: 11px;
+    /*MARGINS, BORDER, PADDING*/
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+.fighterName {
+    /*FONT*/
+    font-size: 24px;
+    /*MARGINS, BORDER, PADDING*/
+    margin: 0;
+}
+
+.fighterFranchise {
+    /*TEXT*/
+    
+    /*MARGINS, BORDER, PADDING*/
+    margin: 0;
+    color:#b4b9c4
 }

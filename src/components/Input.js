@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import './Input.css'
 
 class Input extends Component {
     constructor(props){
@@ -11,7 +12,7 @@ class Input extends Component {
 
     render(){
         return(
-            <div>
+            <div className="addFighterInput">
                 <input type="text"
                         placeholder={this.props.placeholder}
                         onChange={(e) => {this.props.handleChange(this.props.field, e.target.value)}}

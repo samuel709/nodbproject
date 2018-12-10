@@ -3,15 +3,14 @@ import './DisplayFighters.css'
 import DeleteFighter from './DeleteFighter'
 
 
-
 function DisplayFighters(props){
     const fighters = props.fighters.map((val, i) => {
         return(
-            <div key={val.id}>
-                <li>{val.image}</li>
-                <li>{val.name}</li>
-                <li>{val.franchise}</li>
-                <DeleteFighter 
+            <div key={val.id} className="fighters">
+                <img src={val.image} alt="" className="fighterImage"/>
+                <h3 className="fighterName">{val.name}</h3>
+                <h6 className="fighterFranchise">{val.franchise}</h6>
+                <DeleteFighter className="deleteButton"
                 deleteFighter={props.deleteFighter}
                 id={val.id}
                 />

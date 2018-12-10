@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Input from './Input'
-import axios from 'axios';
+import "./AddFighter.css"
 
 class AddFighter extends Component {
     
@@ -31,7 +31,7 @@ render(){
     }
 
     return(
-        <div>
+        <div className="addFighter">
             <Input placeholder="Name"
                     field="name"
                     handleChange={this.handleChange}/>
@@ -46,7 +46,7 @@ render(){
 
             <button onClick={() => {
                 this.props.addFighter(newFighter)}}
-                >Add Fighter</button>
+                className="addFighterButton">Add Fighter</button>
         </div>
     )
 }

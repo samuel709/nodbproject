@@ -1,0 +1,11 @@
+.mainHeader {
+    /*FONT*/
+    /*SIZE*/
+    height: 150px;
+    /*POSITIONING*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*MARGINS, BORDER, PADDING*/
+    /* border: 1px solid green; */
+}

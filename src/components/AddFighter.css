@@ -1,0 +1,9 @@
+.addFighter {
+    display: inline-flex;
+    /* border: 2px solid green; */
+    align-items: center;
+}
+
+.addFighterButton {
+    height: 30px;
+}

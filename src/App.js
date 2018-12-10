@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import DisplayFighters from './components/DisplayFighters';
 import AddFighter from './components/AddFighter';
+import MainHeader from './components/MainHeader';
 
 class App extends Component {
   constructor(props) {
@@ -47,12 +48,16 @@ class App extends Component {
     return (
       <div>
         <div>
+          <MainHeader />
+        </div>
+
+        <div className="addFighterDiv">
           <AddFighter 
           fighters={fighters}
           addFighter={this.addFighter}/>
         </div>
 
-        <div>
+        <div className="displayFighterDiv">
           <DisplayFighters 
           fighters={fighters}
           deleteFighter={this.deleteFighter}

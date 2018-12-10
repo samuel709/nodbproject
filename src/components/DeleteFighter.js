@@ -21,9 +21,9 @@ class DeleteFighter extends Component {
 
     render(){
         return(
-            <button 
+            <button className="deleteButton"
                 onClick={() => {this.props.deleteFighter(this.props.id)}}>
-                Delete Fighter
+                Delete
             </button>
         )
     }
