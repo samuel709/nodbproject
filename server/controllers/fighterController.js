@@ -78,6 +78,17 @@ module.exports = {
         }
         res.status(200).send(fightersByFranchise);
     },
+    addFighter: (req, res) => {
+        let newFighter = {
+            name: req.body.name,
+            franchise: req.body.franchise,
+            image: req.body.image,
+            id: id
+        }
+        id++
+        fighters.push(newFighter)
+        res.status(200).send(fighters);
+    },
     deleteFighter: (req, res) => {
         const deleteID = req.params.id;
         const fighterIndex = fighters.findIndex(fighter => fighter.id == deleteID)
