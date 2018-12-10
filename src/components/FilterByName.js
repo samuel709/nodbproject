@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Input from './Input'
-import './FilterByName.css'
+import './Filter.css'
 
 class FilterByName extends Component {
     constructor(props){
@@ -19,7 +19,7 @@ class FilterByName extends Component {
 
     render(){
         return(
-            <div className="filterFighters">
+            <div className="filter">
                 <Input placeholder="Search by name"
                         field="name"
                         handleChange={this.handleChange}/>

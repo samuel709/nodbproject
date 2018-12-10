@@ -10,7 +10,7 @@ app.use(express.json());
 //ENDPOINTS
 app.get('/api/fighters', fighterController.getAllFighters);
 app.get('/api/fighter/:name', fighterController.getFighter);
-// app.get('/api/fighters/:franchise', fighterController.getFightersByFranchise);
+app.get('/api/fighters/:franchise', fighterController.getFightersByFranchise);
 app.post('/api/fighter', fighterController.addFighter);
 app.delete('/api/fighters/:id', fighterController.deleteFighter);
 

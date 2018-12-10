@@ -58,21 +58,25 @@ module.exports = {
     getFighter: (req, res) => {
         const fighterName = req.params.name;
         const fighterIndex = fighters.findIndex(fighter => fighter.name == fighterName)
-        res.status(200).send(fighters[fighterIndex]);
+        const fighter = []
+        if (fighters[fighterIndex] == null){
+            return res.status(404).send("Fighter not found")
+        } else {
+            fighter.push(fighters[fighterIndex])
+            res.status(200).send(fighter);
+        } 
     },
-    // getFightersByFranchise: (req, res) => {
-        
-    // },
-    addFighter: (req, res) => {
-        let newFighter = {
-            name: req.body.name,
-            franchise: req.body.franchise,
-            image: req.body.image,
-            id: id
+    getFightersByFranchise: (req, res) => {
+        const franchiseName = req.params.franchise;
+        const fightersByFranchise = [];
+        for (let i = 0; i < fighters.length; i++){
+            for (prop in fighters[i]){
+                if (fighters[i][prop] == franchiseName){
+                    fightersByFranchise.push(fighters[i])
+                }
+            }
         }
-        id++
-        fighters.push(newFighter)
-        res.status(200).send(fighters);
+        res.status(200).send(fightersByFranchise);
     },
     deleteFighter: (req, res) => {
         const deleteID = req.params.id;

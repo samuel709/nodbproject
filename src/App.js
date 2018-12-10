@@ -5,6 +5,7 @@ import DisplayFighters from './components/DisplayFighters';
 import AddFighter from './components/AddFighter';
 import MainHeader from './components/MainHeader';
 import FilterByName from './components/FilterByName';
+import FilterByFranchise from './components/FilterByFranchise'
 
 class App extends Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class App extends Component {
     this.addFighter = this.addFighter.bind(this)
     this.deleteFighter = this.deleteFighter.bind(this)
     this.filterByName = this.filterByName.bind(this)
+    this.filterByFranchise = this.filterByFranchise.bind(this)
   }
 
   componentDidMount() {
@@ -48,11 +50,17 @@ class App extends Component {
   filterByName(name){
     axios.get(`/api/fighter/${name}`)
     .then((response) => {
-      var newData = response.data;
-      var filtered = [];
-      filtered.push(newData);
       this.setState({
-        fighters: filtered
+        fighters: response.data
+      })
+    })
+  }
+
+  filterByFranchise(franchise){
+    axios.get(`/api/fighters/${franchise}`)
+    .then((response) => {
+      this.setState({
+        fighters: response.data
       })
     })
   }
@@ -72,6 +80,9 @@ class App extends Component {
           <AddFighter className="add"
             fighters={fighters}
             addFighter={this.addFighter}/>
+
+          <FilterByFranchise 
+            filterByFranchise={this.filterByFranchise}/>
         </div>
 
         <div className="displayFighterDiv">
