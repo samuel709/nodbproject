@@ -55,6 +55,14 @@ module.exports = {
     getAllFighters: (req, res) => {
         res.status(200).send(fighters);
     },
+    getFighter: (req, res) => {
+        const fighterName = req.params.name;
+        const fighterIndex = fighters.findIndex(fighter => fighter.name == fighterName)
+        res.status(200).send(fighters[fighterIndex]);
+    },
+    // getFightersByFranchise: (req, res) => {
+        
+    // },
     addFighter: (req, res) => {
         let newFighter = {
             name: req.body.name,

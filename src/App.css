@@ -2,8 +2,9 @@
   /* border: 1px solid blue; */
   margin-bottom: 0px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
+
 
 .displayFighterDiv {
   /* border: 1px solid red; */

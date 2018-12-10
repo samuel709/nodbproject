@@ -1,0 +1,9 @@
+.filterFighters {
+    /* border: 1px solid green; */
+    display: flex;
+    align-items: center;
+}
+
+.filterButton {
+    height: 30px;
+}
